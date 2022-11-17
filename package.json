@@ -10,7 +10,7 @@
   },
   "types": "./dist/index.d.ts",
   "peerDependencies": {
-    "react": "^16.12.0"
+    "react": "^18.x"
   },
   "keywords": [
     "react-midi",
