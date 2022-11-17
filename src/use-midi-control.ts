@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import uniqid from 'uniqid';
-import { Input, Message, MIDIFilter, MIDIControl } from './types';
+import { Input, Message, MIDIControl, MIDIFilter } from './types';
 import { useConnectInput } from './use-connect-input';
 
 export const useMIDIControl = (
@@ -27,7 +27,7 @@ export const useMIDIControl = (
     if (!input) return;
     const id = uniqid();
     input.controlListeners[id] = handleControlMessage;
-    return () => delete input.controlListeners[id];
+    () => delete input.controlListeners[id];
   }, [input, controlFilter, channelFilter]);
   return value;
 };

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import uniqid from 'uniqid';
 import { Input, MIDIMessage } from './types';
 import { useConnectInput } from './use-connect-input';
@@ -15,7 +15,7 @@ export const useMIDIMessage = (input: Input) => {
     if (!input) return;
     const id = uniqid();
     input.messageListeners[id] = handleMessage;
-    return () => delete input.messageListeners[id];
+    () => delete input.messageListeners[id];
   }, [input]);
 
   return message;
